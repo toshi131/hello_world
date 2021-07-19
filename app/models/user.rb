@@ -1,6 +1,13 @@
 class User < ApplicationRecord
-validates(:name,{presence:true, length:{maximum: 15}})	
-validates(:email,{presence:true, length:{maximum: 50}, format:{with:URI::MailTo::EMAIL_REGEXP}})
+  validates(:name, {presence: true , length: {maximum:15, minimum:2}})
+  validates(:email, {presence: true, length: {maximum:255, minimum:6},
+    format: {with:URI::MailTo::EMAIL_REGEXP}, 
+    uniqueness: true })
+  has_secure_password 
+  validates(:password,{presence: true, length: {minimum:10}})
+
+#validates(:name,{presence:true, length: {maximum:15}})	
+# validates(:email,{presence:true, length: {maximum:50}, format: {with:URI::MailTo::EMAIL_REGEXP}, uniqueness: true})
 end
 
 # module ApplicationHelper
@@ -16,7 +23,6 @@ end
 #   	def check()
 #       puts "small effort is important"
 #   end
-
 # end
 # ApplicationHelper::check
 # ApplicationHelper::StudentController.new.test 
