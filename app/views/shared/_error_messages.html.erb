@@ -4,9 +4,18 @@
       The form contains <%= pluralize(@user.errors.count, "error") %>.
     </div>
     <ul>
+<<<<<<< HEAD
     <% @user.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
     </ul>
   </div>
 <% end %>
+=======
+    <% @user.errors.full_messages.each do |messages| %>
+      <li><%= messages %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+>>>>>>> sign_up
