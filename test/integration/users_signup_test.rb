@@ -17,15 +17,4 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
   #     password_confirmation: "password" }}
   #   end 
   # end
-<<<<<<< HEAD
-
-  test "invalid signup information" do
-    get signup_path
-    assert_no_difference 'User.count' do
-      post users_path, params:{user: { name:  "toshi"}}
-    end
-    
-  end
-=======
->>>>>>> log-in-log-out
 end

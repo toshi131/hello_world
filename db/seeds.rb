@@ -5,15 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create!(name:  "Example User",
-             email: "Testuser131@example.com",
-             password:              "password12345",
-             password_confirmation: "password12345")
+User.create!(name:"jomecurrecyle",
+             email:"jome131@example.com",
+             password:              "passwordfaker",
+             password_confirmation: "passwordfaker")
 
 99.times do |index|
   name  = Faker::Name.name
   User.create!(name: name,
-               email: "example#{index}@user.com",
-               password:              "password12345",
-               password_confirmation: "password12345")
+               email: "useryyy#{index}@example.com",
+               password:              "passwordfaker",
+               password_confirmation: "passwordfaker")
 end

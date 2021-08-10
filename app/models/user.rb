@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  validates(:name, {presence: true , length: {maximum:15, minimum:2}})
+  validates(:name, {presence: true , length: {maximum:50, minimum:2}})
   validates(:email, {presence: true, length: {maximum:255, minimum:6},
     format: {with:URI::MailTo::EMAIL_REGEXP}, 
     uniqueness: true })
