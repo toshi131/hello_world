@@ -28,6 +28,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
   end
+<<<<<<< HEAD
 
   def update
     if @user.update(user_params)
@@ -44,6 +45,9 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 
+=======
+    
+>>>>>>> updating-users
   private
 
     def user_params

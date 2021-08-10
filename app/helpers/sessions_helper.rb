@@ -3,10 +3,13 @@ module SessionsHelper
   # Logs in the given user.
   def log_in(user)
     session[:user_id] = user.id
+<<<<<<< HEAD
   end 
 
   def current_user?(user)
     user == current_user
+=======
+>>>>>>> updating-users
   end
 
   # Returns the current logged-in user (if any).
@@ -19,11 +22,16 @@ module SessionsHelper
     !current_user.nil?
   end
 
+<<<<<<< HEAD
   def log_out
+=======
+    def log_out
+>>>>>>> updating-users
     session.delete(:user_id)
     @current_user = nil
   end
   
+<<<<<<< HEAD
     def redirect_back_or(default)
     redirect_to(session[:forwarding_url] || default)
     session.delete(:forwarding_url)
@@ -33,4 +41,6 @@ module SessionsHelper
   def store_location
     session[:forwarding_url] = request.url if request.get?
   end
+=======
+>>>>>>> updating-users
 end
