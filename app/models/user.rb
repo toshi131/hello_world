@@ -1,12 +1,18 @@
-class User < ApplicationRecord
+class User < ApplicationRecord 
   validates(:name, {presence: true , length: {maximum:50, minimum:2}})
   validates(:email, {presence: true, length: {maximum:255, minimum:6},
     format: {with:URI::MailTo::EMAIL_REGEXP}, 
     uniqueness: true })
   has_secure_password 
   validates(:password,{presence: true, length: {minimum:10}})
+  has_many :microposts, dependent: :destroy
 
-#validates(:name,{presence:true, length: {maximum:15}})	
+
+  def feed
+    Micropost.where("user_id = ?", id)
+  end
+
+  #validates(:name,{presence:true, length: {maximum:15}})	
 # validates(:email,{presence:true, length: {maximum:50}, format: {with:URI::MailTo::EMAIL_REGEXP}, uniqueness: true})
 end
 

@@ -10,10 +10,11 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def show
+    def show
     @user = User.find(params[:id])
+    @microposts = @user.microposts.paginate(page: params[:page])
   end
-
+  
   def create
     @user = User.new(user_params)    # Not the final implementation!
     if @user.save
@@ -28,7 +29,6 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
   end
-<<<<<<< HEAD
 
   def update
     if @user.update(user_params)
@@ -44,10 +44,7 @@ class UsersController < ApplicationController
     flash[:success] = "User deleted"
     redirect_to users_url
   end
-
-=======
     
->>>>>>> updating-users
   private
 
     def user_params

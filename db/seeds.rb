@@ -17,3 +17,10 @@ User.create!(name:"jomecurrecyle",
                password:              "passwordfaker",
                password_confirmation: "passwordfaker")
 end
+
+users = User.order(:created_at).take(6)
+50.times do
+  users.each do|user|
+    user.microposts.create!(content: Faker::Lorem)
+  end
+end

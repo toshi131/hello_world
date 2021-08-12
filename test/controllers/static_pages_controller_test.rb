@@ -18,7 +18,7 @@ class StaticPagesControllerTest < ActionController::TestCase
 
   end
 
-test "shoud get about" do
+  test "shoud get about" do
     get :about
     assert_response :success
     assert_select "title","About | #{@base_title}"
